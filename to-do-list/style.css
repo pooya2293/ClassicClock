@@ -1,0 +1,161 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "iranyekan";
+  list-style: none;
+}
+
+:root {
+  --primaryColor: #6d28d9;
+  --secondaryColor: #ede9fe;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+  --mainRed: #db2777;
+  --bodyColor: #f6f6f6;
+}
+
+body {
+  font-family: "iranyekan";
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  background-color: var(--bodyColor);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+header {
+  min-height: 20vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+  /* background-color: blueviolet; */
+  /* min-height: 20vh; */
+  /* background-color: #fff; */
+  /* width: 22rem; */
+}
+.form-container {
+  display: flex;
+}
+form {
+  width: 25rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+form input {
+  flex: 1;
+}
+.todo-container {
+  width: 25rem;
+}
+form input,
+form button {
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+form button {
+  color: var(--primaryColor);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--primaryColor);
+  color: white;
+}
+div.todo {
+  background-color: var(--secondaryColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.3rem 0;
+  transition: all 0.3s ease;
+}
+.todo li {
+  color: var(--primaryColor);
+  font-weight: bold;
+  flex: 1;
+}
+.todo span {
+  display: block;
+  /* background-color: white; */
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.fa-trash-alt {
+  color: var(--mainRed);
+}
+
+.fa-edit,
+.fa-check-square {
+  color: var(--primaryColor);
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+select {
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 1rem;
+  color: var(--primaryColor);
+}
+
+.select {
+  margin-left: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  width: 10rem;
+  font-weight: bold;
+  position: relative;
+}
+.select::after {
+  content: "\25BC";
+  color: var(--primaryColor);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    flex-direction: column;
+  }
+  .form-container form {
+    order: 2;
+    margin-top: 2rem;
+  }
+  .todo-container,
+  form {
+    width: 90vw;
+    max-width: 45rem;
+  }
+  .todo span{
+    padding: 0.7rem;
+   font-size: 1.1rem;
+  }
+}
